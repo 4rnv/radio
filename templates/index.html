@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#28083D"/>
+    <meta name="description" content="..."/>
+    <title>Radio Site</title>
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}" type="application/json">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons/favi.ico') }}">
+    <style>
+        #comments-sextion {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><a>Ϫ</a></div>
+        <div class="right">
+        <button type="button" id="toggle-comments">Comments</button>
+        <button type="button" class="modal-btn">Settings</button>
+        </div>
+    </div>
+    <div class="modal" id="settingsModal">
+        <div class="modal-content animate__animated animate__bounceInDown animate__fast">
+            <i class="lni lni-close close"></i>
+            <h2>Settings & Info</h2>
+            <div class="settings-grid">
+                <div class="grid-item">
+                    <button class="info-btn" onclick="showInfo('canvas-theme')">Canvas Theme Colour<i class="lni lni-angle-double-down" style="float: right; font-size: 1.5rem;"></i></button>
+                    <div class="info-content" id="canvas-theme">
+                        <!-- Color picker and its content here -->
+                        <input type="color" id="colorPicker" value="#ffb505">
+                        Change the colour of the audio visualizer.
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <button class="info-btn" onclick="showInfo('about')">About<i class="lni lni-angle-double-down" style="float: right; font-size: 1.5rem;"></i></button>
+                    <div class="info-content" id="about">
+                        <!-- About content here -->
+                        Radio. Listen to music with visualizer.
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <button class="info-btn" onclick="showInfo('feedback')">Feedback<i class="lni lni-angle-double-down" style="float: right; font-size: 1.5rem;"></i></button>
+                    <div class="info-content" id="feedback">
+                        <!-- Feedback content here -->
+                        Words words words
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <button class="info-btn" onclick="showInfo('contact')">Contact<i class="lni lni-angle-double-down" style="float: right; font-size: 1.5rem;"></i></button>
+                    <div class="info-content" id="contact">
+                        <!-- Contact content here -->
+                        Words words words
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <button class="info-btn" onclick="showInfo('pwa')">PWA<i class="lni lni-angle-double-down" style="float: right; font-size: 1.5rem;"></i></button>
+                    <div class="info-content" id="pwa">
+                        <!-- PWA content here -->
+                        You can install this site as Progressive Web App. Installing as a PWA has numerous benefits. This allows you to access the app even offline, and helps circumvent Google's r-slurred audio playing practices.<br>
+                        <h3>Android</h3>
+                        Click on the 'Install' button in your browser menu.
+                        <h3>iOS</h3>
+                        'Add to home screen' in the Safari menu.<br>
+                        <h3>Windows Phone</h3>
+                         Click on the 3 dots near the address bar, and choose 'pin to start'.
+                        <h3>Desktop</h3>
+                        Click on the Install button in your browser's address bar.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="comments-sextion">
+        <h1>Comments</h1>
+        <button id="feeduck" class="lni lni-angle-double-down"></button>
+        <div id="comments-section"></div>
+        <div class="sneed" id="sneed" style="display: block;">
+        <form id="comment-form">
+        <input type="text" id="comment-text" placeholder="Enter message here" size="40" maxlength="140" minlength="10">
+        <input type="submit" id="comment-submit" value="Post" size="20" class="animate__animated animate__pulse">
+        </div>
+    </div>
+    <div id="content">
+        <canvas id="audioVisualizer" width="640" height="480"></canvas>
+        <div id="player">
+            <audio autoplay hidden id="audioPlayer">
+                Your browser does not support the audio element.
+            </audio>
+            <div id="song-info">
+                Now playing: <span id="current-song">Song Title</span><br>
+                Artist(s): <span id="current-artist">Artist</span><br>
+                Series: <span id="current-album">Series</span>
+            </div>   
+            <div id="play-container">
+                <div>
+                    <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+                    <div id="volValue" style="font-size: 1.2rem; font-weight: lighter;"></div>
+                </div>
+                <div>
+                    <button type="button" id="play-button" class="lni lni-play"></button>
+                </div>
+                <div title="Likes" class="like-container">
+                    <button id="like-button" type="button" class="lni lni-heart animate__animated"></button>
+                    <span id="like-count">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!--ver 1.0-->
+</body>
+</html>

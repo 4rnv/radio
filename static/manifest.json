@@ -1,0 +1,44 @@
+{
+    "name": "Radio",
+    "short_name": "Radio",
+    "description": "Radio site.",
+    "lang": "en-US",
+    "start_url": ".",
+    "id" : "./",
+    "scope": "./",
+    "theme_color": "#FFB505",
+    "background_color": "#28083D",
+    "display": "standalone",
+    "icons": [
+        {
+          "src": "./icons/favicon-144.png",
+          "sizes": "144x144",
+          "purpose": "maskable"
+        },
+        {
+          "src": "./icons/favicon-192.png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "./icons/favicon-512.png",
+          "sizes": "512x512",
+          "purpose": "maskable"
+        }
+      ],
+    "screenshots": [
+        {
+         "src": "./icons/screen.png",
+          "sizes": "1916x968",
+          "type": "image/png",
+          "form_factor": "wide",
+          "label": "Screenshot"
+        },
+        {
+          "src": "./icons/screennarrow.png",
+           "sizes": "1536x2048",
+           "type": "image/png",
+           "form_factor": "narrow",
+           "label": "Screenshot"
+         }
+    ]
+}

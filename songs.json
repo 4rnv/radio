@@ -1,0 +1,7 @@
+[
+    { "title": "A", "artist": "Part-time Warrior", "file": "m1.mp3", "album": "001"},
+    { "title": "B", "artist": "Huouin Kyouma", "file": "m2.mp3", "album": "010"},
+    { "title": "C", "artist": "Christina", "file": "m3.mp3", "album": "011"},
+    { "title": "D", "artist": "Supa Hakah", "file": "m4.mp3", "album": "100"},
+    { "title": "E", "artist": "Mr. Braun", "file": "m5.mp3", "album": "101"}
+]
